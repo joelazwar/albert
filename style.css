@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; }
+html {
+	height: 100%;
+}
+body {
+    background-image: url("IMG_1485.JPG");
+    background-attachment: fixed;
+    background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+main{
+    display: flex;
+    height:100%;
+    width:100%;
+    overflow:scroll;
+}
+
+#nav {
+    width:60%;
+    padding:30px;
+    margin:auto;
+    text-align: center;
+}
+
+
+#logo{
+    width:100%;
+    cursor:pointer;
+    transition: transform 500ms;
+}
+
+#logo:hover{
+    transform: scale(1.1)
+}
+
+#nav-links {
+    width: 100%;
+    display:flex;
+    flex-shrink: 0;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.link {
+    margin :0px 10px;
+    transition : transform 500ms ease-in-out, font-weight 500ms ease-in-out;
+}
+
+.link:hover{
+    transform:scale(1.2);
+    cursor:pointer;
+}
+
+a {
+    color: white;
+    font-family: monospace;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+#preview{
+    opacity:0%;
+    width:60%;
+    height:100%;
+    margin:auto;
+    overflow:scroll;
+    flex-direction: column;
+}
+
+
+#preview::-webkit-scrollbar, main::-webkit-scrollbar {
+    display: none;
+  }
+
+.home-btn{
+    position:fixed;
+    left:8vw;
+    border:none;
+    background-color: transparent;
+    text-decoration:underline;
+    color:white;
+    font-family: monospace;
+    font-size:16px;
+    cursor:pointer;
+}

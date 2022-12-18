@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./jquery-3.6.2.min.js"></script>
+    <title>albert</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <main>
+        <div id="nav">
+            <img id="logo" src="logo.png" />
+            <div id="nav-links">
+                <div class="link"><a href="https://instagram.com/albert.band">Instagram</a></div>
+                <div class="link"><a href="https://www.facebook.com/thebandalbert">Facebook</a></div>
+                <div class="link"><a href="https://open.spotify.com/artist/7Fu8c2I0YYJJ0sWM904Pr5?si=FZ58HrskS5GTGntDtJxy-A">Spotify</a></div>
+                <div class="link"><a href="https://music.apple.com/gy/artist/albert/1529909050">AppleMusic</a></div>
+                <div class="link"><a href="https://www.youtube.com/channel/UCwFe4vMKY0yDt_LG3WLMv0A">Youtube</a></div>
+            </div>
+        </div>
+        <div id="preview" hidden>
+            <button class="home-btn">Home</button>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3PNmF8uwDmLx5XsqOpdPn5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0GlJ8cL68e8Xe6YYYnAFkx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5a9TbDYKE7KJhXVOBuTfym?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </main>
+    <script src="./jquery.ripples.js"></script>
+    <script>
+        $(document).ready(function () {
+            try {
+                $('body').ripples({
+                    resolution: 512,
+                    dropRadius: 20, //px
+                    perturbance: 0.01,
+                });
+            }
+            catch (e) {
+                $('.error').show().text(e);
+            }
+
+
+            // Automatic drops
+            setInterval(function () {
+                var $el = $('body');
+                var x = Math.random() * $el.outerWidth();
+                var y = Math.random() * $el.outerHeight();
+                var dropRadius = 35;
+                var strength = 0.01;
+
+                $el.ripples('drop', x, y, dropRadius, strength);
+            }, 50);
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
